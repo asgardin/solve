@@ -1,0 +1,133 @@
+.stores {
+    @include adaptiveValue("padding-top", 128, 50);
+    @include adaptiveValue("margin-bottom", 128, 50);
+
+    // .stores__container
+
+    &__container {
+    }
+
+    // .stores__block
+
+    &__block {
+    }
+}
+.block-stores {
+    // .block-stores__title
+
+    &__title {
+        @include adaptiveValue("margin-bottom", 80, 40);
+        @media (max-width: rem(1000)) {
+            text-align: center;
+        }
+    }
+    &__item {
+        display: flex;
+        @include adaptiveValue("gap", 96, 40);
+        @media (max-width: rem(1000)) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    // .block-stores__contant
+
+    &__contant {
+        display: flex;
+        align-items: center;
+        max-width: rem(750);
+        flex: 1 1 auto;
+        @media (max-width: rem(600)) {
+            flex-direction: column;
+            row-gap: rem(40);
+            text-align: center;
+        }
+    }
+
+    // .block-stores__img
+
+    &__img {
+        @include adaptiveValue("margin-right", 48, 20);
+        img {
+            max-width: 100%;
+        }
+        @media (max-width: rem(600)) {
+            margin-right: rem(0);
+        }
+    }
+
+    // .block-stores__info-contant
+
+    &__info-contant {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: rem(24);
+        flex: 0 1 rem(404);
+        @media (max-width: rem(1000)) {
+            flex-direction: column;
+            flex: 0 1 auto;
+        }
+    }
+
+    // .block-stores__city-title
+
+    &__city-title {
+        font-family: "NewYork PERSONAL USE";
+        @include adaptiveValue("font-size", 36, 25);
+        line-height: 110%;
+    }
+
+    // .block-stores__address
+
+    &__address {
+        font-size: rem(18);
+        line-height: 160%;
+    }
+
+    // .block-stores__button
+
+    &__button {
+        width: rem(230);
+        font-weight: 500;
+        line-height: math.div(20, 16);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: rem(0);
+
+        a {
+            font-size: rem(16);
+            span {
+                position: absolute;
+                top: 0;
+                left: 55%;
+                width: rem(30);
+                height: rem(1);
+                background-color: $mainColor;
+                transform: translate(rem(40), rem(10));
+                z-index: 5;
+
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: rem(1);
+                    height: rem(5);
+                    background-color: $mainColor;
+                }
+                &::before {
+                    top: -350%;
+                    right: 4%;
+                    transform: rotate(-45deg);
+                }
+                &::after {
+                    top: -27%;
+                    right: 4%;
+                    transform: rotate(45deg);
+                }
+                @media (max-width: rem(600)) {
+                    left: 68%;
+                }
+            }
+        }
+    }
+}

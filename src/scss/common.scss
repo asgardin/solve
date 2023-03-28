@@ -1,0 +1,120 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.sub-title {
+    text-transform: uppercase;
+    font-family: "NewYork PERSONAL USE";
+    @include adaptiveValue("font-size", 36, 25);
+    line-height: 110%;
+    transition: all 0.5s ease 0s;
+    @media (any-hover: hover) {
+        &:hover {
+            color: rgba(255, 136, 0, 0.945);
+        }
+    }
+}
+
+.title {
+    font-family: "NewYork PERSONAL USE";
+    @include adaptiveValue("font-size", 260, 50);
+    line-height: 90%;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.button {
+    display: inline-block;
+    font-weight: 500;
+    @include adaptiveValue("font-size", 16, 10);
+    line-height: math.div(20, 16);
+    border: 1px solid #ffffff;
+    border-radius: rem(500);
+    color: #ffffff;
+    @include adaptiveValue("padding-top", 24, 14);
+    @include adaptiveValue("padding-bottom", 24, 14);
+    @include adaptiveValue("padding-left", 40, 20);
+    @include adaptiveValue("padding-right", 40, 20);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+    @media (any-hover: hover) {
+        &:hover {
+            background: rgba(255, 136, 0, 0.945);
+            transform: scale(1.1);
+        }
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+.contant {
+    &__name-title {
+        font-weight: 500;
+        font-size: rem(20);
+        line-height: math.div(25, 20);
+        text-transform: uppercase;
+        &:not(:last-child) {
+            margin-bottom: rem(8);
+        }
+    }
+
+    &__price {
+        font-weight: 500;
+        line-height: math.div(20, 16);
+    }
+}
+
+.title-secondary {
+    font-family: "NewYork PERSONAL USE";
+    @include adaptiveValue("font-size", 128, 50);
+    line-height: 110%;
+}
+
+
+
+
+
+.navigation-btn{
+    a {
+        
+        font-size: rem(16);
+        display: block;
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 500;
+        line-height: math.div(20, 16);
+        transition: all 0.5s ease 0s;
+            @media (any-hover: hover) {
+                &:hover {
+                    color: rgba(255, 136, 0, 0.945);
+                }
+            }
+        span {
+            position: absolute;
+            top: 0;
+            left: rem(35);
+            width: rem(30);
+            height: rem(1);
+            background-color: $mainColor;
+            transform: translate(rem(40), rem(10));
+            z-index: 5;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                width: rem(1);
+                height: rem(5);
+                background-color: $mainColor;
+            }
+            &::before {
+                top: -350%;
+                right: 4%;
+                transform: rotate(-45deg);
+            }
+            &::after {
+                top: -27%;
+                right: 4%;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
